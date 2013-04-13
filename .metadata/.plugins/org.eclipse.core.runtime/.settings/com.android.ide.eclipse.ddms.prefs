@@ -1,0 +1,11 @@
+ddms.logcat.auotmonitor.level=error
+ddms.logcat.automonitor.userprompt=true
+eclipse.preferences.version=1
+logcat.view.colsize.Application=144
+logcat.view.colsize.Level=24
+logcat.view.colsize.PID=52
+logcat.view.colsize.TID=52
+logcat.view.colsize.Tag=109
+logcat.view.colsize.Text=551
+logcat.view.colsize.Time=141
+logcat.view.filters.list=name\: '1', tag\: 'AndroidRuntime', text\: 'at com.android.internal.os.ZygoteInit.main(ZygoteInit.java\:732)', pid\: '6651', app\: 'per.pqy.apktool', level\: 'error', 

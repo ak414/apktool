@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="删除资源“FileManager”" deleteContents="true" description="删除资源“FileManager”" element1="/FileManager" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1365673838842"/>
+</session>

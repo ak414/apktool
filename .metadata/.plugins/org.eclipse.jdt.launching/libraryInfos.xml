@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="/opt/icedtea-bin-7.2.3.8" version="1.7.0_17">
+<bootpath>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/resources.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/rt.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/sunrsasign.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/jsse.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/jce.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/charsets.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/netx.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/plugin.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/rhino.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/jfr.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="/opt/icedtea-bin-7.2.3.6" version="1.7.0_13">
+<bootpath>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/resources.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/rt.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/sunrsasign.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/jsse.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/jce.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/charsets.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/netx.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/plugin.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/rhino.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/jfr.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="/opt/icedtea-bin-7.2.3.6/jre" version="1.7.0_13">
+<bootpath>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/resources.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/rt.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/sunrsasign.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/jsse.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/jce.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/charsets.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/netx.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/plugin.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/rhino.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/jfr.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/opt/icedtea-bin-7.2.3.6/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="/opt/icedtea-bin-7.2.3.8/jre" version="1.7.0_17">
+<bootpath>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/resources.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/rt.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/sunrsasign.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/jsse.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/jce.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/charsets.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/netx.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/plugin.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/rhino.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/jfr.jar"/>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/opt/icedtea-bin-7.2.3.8/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

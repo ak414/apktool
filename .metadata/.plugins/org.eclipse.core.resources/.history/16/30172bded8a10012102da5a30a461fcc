@@ -1,0 +1,15 @@
+#f905f5#f905f5
+    <resources>
+        <string name="app_name">Apktool</string>
+        <color name="textcolor">#f905f5</color>
+        <string-array name="dec_array">
+            <item >反编译全部</item>
+            <item >反编译dex</item>
+            <item >反编译资源</item>
+            <item >签名</item>
+            <item >生成odex</item>
+            <item >zipalign优化</item>
+            <item >安装</item>
+            <item >返回</item>
+        </string-array>
+    </resources>

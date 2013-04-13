@@ -1,0 +1,8 @@
+
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:id="@+id/setting" android:title="设置"></item><item android:id="@+id/about" android:title="关于"></item>
+        <item android:id="@+id/install_framework" android:title="安装framework"></item><item android:id="@+id/refresh" android:title="刷新"></item><item android:id="@+id/exit" android:title="退出"></item>
+        
+        
+        
+    </menu>

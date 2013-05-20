@@ -12,15 +12,11 @@
 <fullyQualifiedTypeName name="android.os.Handler"/>
 <fullyQualifiedTypeName name="android.os.Message"/>
 <fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
-<fullyQualifiedTypeName name="android.content.ClipboardManager"/>
-<fullyQualifiedTypeName name="android.text.ClipboardManager"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.util.Comparator"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="android.graphics.Color"/>
 <fullyQualifiedTypeName name="android.content.Intent"/>
 <fullyQualifiedTypeName name="android.net.Uri"/>
-<fullyQualifiedTypeName name="android.util.DisplayMetrics"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="android.content.SharedPreferences"/>
 <fullyQualifiedTypeName name="android.os.Vibrator"/>
@@ -39,6 +35,18 @@
 <fullyQualifiedTypeName name="per.pqy.apktool.R.drawable"/>
 <fullyQualifiedTypeName name="android.widget.EditText"/>
 <fullyQualifiedTypeName name="android.view.ViewGroup"/>
-<fullyQualifiedTypeName name="android.widget.ImageView"/>
 <fullyQualifiedTypeName name="per.pqy.apktool.R.id"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Constructor"/>
+<fullyQualifiedTypeName name="android.util.DisplayMetrics"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Method"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Field"/>
+<fullyQualifiedTypeName name="android.content.res.Resources"/>
+<fullyQualifiedTypeName name="android.widget.ImageView"/>
+<fullyQualifiedTypeName name="android.os.PowerManager"/>
+<fullyQualifiedTypeName name="android.os.PowerManager.WakeLock"/>
+<fullyQualifiedTypeName name="android.content.ClipboardManager"/>
+<fullyQualifiedTypeName name="android.text.ClipboardManager"/>
+<fullyQualifiedTypeName name="per.pqy.apktool.MainActivity"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
 </qualifiedTypeNameHistroy>

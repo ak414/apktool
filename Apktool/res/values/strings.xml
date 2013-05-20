@@ -10,7 +10,12 @@
             <item >生成odex</item>
             <item >zipalign优化</item>
             <item >安装</item>
-            <item >返回</item>
+            <item >删除dex</item>
+            <item >提取签名(META-INF)</item><item >删除签名(META-INF)</item>
+            <item >添加签名(META-INF)</item>
+            
+            <item >做为framework导入</item><item >返回</item>
+            
         </string-array>
         <string-array name="comp_array">
             <item >编译</item>
@@ -34,5 +39,16 @@
             <item >删除</item>
             <item >获取目录访问权限</item><item >返回</item>
             
+        </string-array>
+        <string-array name="unpackimg">
+            <item >解包(mt65xx)</item>
+            <item >解包(通用)</item>
+            <item >返回</item>
+        </string-array>
+        <string-array name="repackimg">
+            <item >打包(mt65xx)</item>
+            <item >打包(通用)</item>
+            <item >浏览</item>
+            <item >返回</item>
         </string-array>
     </resources>

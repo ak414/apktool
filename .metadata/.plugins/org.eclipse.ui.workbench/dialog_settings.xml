@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="847" key="dialogWidth"/>
-		<item value="474" key="dialogHeight"/>
+		<item value="853" key="dialogWidth"/>
+		<item value="480" key="dialogHeight"/>
 		<list key="orderedProviders">
 		</list>
 		<list key="textArray">
@@ -13,8 +13,8 @@
 		</list>
 	</section>
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="40" key="DIALOG_X_ORIGIN"/>
+		<item value="-261" key="DIALOG_Y_ORIGIN"/>
+		<item value="-280" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="ShowViewDialog">
 		<item value="314" key="DIALOG_WIDTH"/>

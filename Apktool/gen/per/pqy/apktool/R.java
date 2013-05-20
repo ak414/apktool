@@ -14,6 +14,8 @@ public final class R {
         public static final int decdex_array=0x7f070003;
         public static final int deodex_array=0x7f070002;
         public static final int longpress_array=0x7f070004;
+        public static final int repackimg=0x7f070006;
+        public static final int unpackimg=0x7f070005;
     }
     public static final class attr {
     }
@@ -32,8 +34,8 @@ public final class R {
         public static final int file_modify=0x7f0a0002;
         public static final int file_name=0x7f0a0001;
         public static final int files=0x7f0a0004;
+        public static final int handbook=0x7f0a0007;
         public static final int icon=0x7f0a0000;
-        public static final int install_framework=0x7f0a0007;
         public static final int refresh=0x7f0a0008;
         public static final int setting=0x7f0a0005;
         public static final int tvpath=0x7f0a0003;
@@ -49,7 +51,7 @@ public final class R {
     public static final class raw {
         public static final int about=0x7f040000;
         public static final int agreement=0x7f040001;
-        public static final int framework=0x7f040002;
+        public static final int handbook=0x7f040002;
     }
     public static final class string {
         public static final int app_name=0x7f050000;

@@ -33,6 +33,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.PowerManager;
+import android.os.PowerManager.WakeLock;
 import android.os.Vibrator;
 import android.text.ClipboardManager;
 import android.util.Log;
@@ -40,12 +42,10 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -58,12 +58,17 @@ public class MainActivity extends Activity {
 	ProgressDialog myDialog;
 	private TextView tvpath;
 	private ListView lvFiles;
-	private TextView tv;
+	PowerManager powerManager = null; 
+    WakeLock wakeLock = null; 				
+    int apicode = android.os.Build.VERSION.SDK_INT;
 	private static final int DECODE = 1;
 	private static final int COMPILE = 2;
 	private static final int DEODEX = 3;
 	private static final int DECDEX = 4;
 	private static final int LONGPRESS = 5;
+	private static final int UNPACKIMG = 6;
+	private static final int REPACKIMG = 7;
+	
 	public String uri;
 	File currentParent;
 	File[] currentFiles;	
@@ -248,22 +253,22 @@ public class MainActivity extends Activity {
 						public void onClick(DialogInterface dialog, int which) {						
 							switch (which) {							
 							case 0:
-								final	String command = new String(" /lix/bash /sdcard/apktool/apktool.sh d -f ") 
+								final	String command = new String(" sh /sdcard/apktool/apktool.sh d -f ") 
 								+ uri + " " + uri.substring(0, uri.length()-4) + "_src";
 								threadWork(MainActivity.this,"正在反编译。。。",command,0);
 								break;									
 							case 1:
-								final	String command1 = new String(" /lix/bash /sdcard/apktool/apktool.sh d -f -r ") 
+								final	String command1 = new String(" sh /sdcard/apktool/apktool.sh d -f -r ") 
 								+ uri + " " + uri.substring(0, uri.length()-4) + "_src";
 								threadWork(MainActivity.this,"正在反编译dex。。。",command1,3);
 								break;	
 							case 2:
-								final String command2 = new String(" /lix/bash /sdcard/apktool/apktool.sh d -f -s ") 
+								final String command2 = new String(" sh /sdcard/apktool/apktool.sh d -f -s ") 
 								+ uri + " " + uri.substring(0, uri.length()-4) + "_src";
 								threadWork(MainActivity.this,"正在反编译资源。。。",command2,4);								
 								break;							
 							case 3:		
-								final String command3 = new String(" /lix/bash /sdcard/apktool/signapk.sh ") 
+								final String command3 = new String(" sh /sdcard/apktool/signapk.sh ") 
 								+ uri + " " + uri.substring(0, uri.length()-4) + "_sign.apk";
 								threadWork(MainActivity.this,"正在签名。。。",command3,1);					
 								break;
@@ -284,6 +289,34 @@ public class MainActivity extends Activity {
 						        startActivity(intent);
 						        break;
 							case 7:
+								final String command6 = new String("/lix/7za d -tzip ") + uri + " classes.dex";
+								threadWork(MainActivity.this,"正在删除。。。",command6,10);
+								break;
+							case 8:
+								File f = new File(uri);
+								if(!new File(f.getParent()+"/META-INF").exists()){
+									final String command7 = new String("sh /sdcard/apktool/tool.sh ")+f.getParent() +" " + f.getName();
+									threadWork(MainActivity.this,"正在提取。。。",command7,6);
+								}
+								else
+									Toast.makeText(MainActivity.this, "当前目录已存在META-INF,请先删除之！", Toast.LENGTH_LONG).show();
+								break;
+							case 9:
+								final String command8 = new String("/lix/7za d -tzip ") + uri + " META-INF";
+								threadWork(MainActivity.this,"正在删除。。。",command8,10);
+								break;
+							case 10:
+								String str = new File(uri).getParent();
+								if(new File(str+"/META-INF").exists()){
+									final String command9 = new String("/lix/7za a -tzip ") + uri + " "+ str+"/META-INF";
+									threadWork(MainActivity.this,"正在添加。。。",command9,8);}
+								else
+									Toast.makeText(MainActivity.this, "当前目录没有签名文件夹META-INF！",Toast.LENGTH_LONG).show();
+								break;
+							case 11:
+								final String command10 = new String(" sh /sdcard/apktool/apktool.sh if ")+uri;								
+								threadWork(MainActivity.this,"正在安装framework文件...",command10,7);
+							case 12:
 								return;								
 							}
 						}
@@ -295,21 +328,22 @@ public class MainActivity extends Activity {
 							switch (which) {
 							case 0:
 								if(uri.endsWith("_src")){
-								final String command = new String(" /lix/bash /sdcard/apktool/apktool.sh b -f -a /lix/aapt ")
+								final String command = new String(" sh /sdcard/apktool/apktool.sh b -f -a /lix/aapt ")
 								+ uri + " " + uri + ".apk";								
 								threadWork(MainActivity.this,"正在编译，请稍等...",command,2);			
 								}else if(uri.endsWith("_odex")){
-									final String command = new String(" /lix/bash /sdcard/apktool/smali.sh ")
-									+ uri + " " + uri.substring(0, uri.length()-5) + ".dex";									
+									final String command = new String(" sh /sdcard/apktool/smali.sh -a ")
+									+String.valueOf(apicode) +" " + uri + " -o " + uri.substring(0, uri.length()-5) + ".dex";									
 									threadWork(MainActivity.this,"正在编译，请稍等...",command,2);
 								}else if(uri.endsWith("_dex")){
-									final String command = new String(" /lix/bash /sdcard/apktool/smali.sh ")
-									+ uri + " " + uri.substring(0, uri.length()-4) + ".dex";									
+									final String command = new String(" sh /sdcard/apktool/smali.sh -a ")
+									+String.valueOf(apicode) +" "+ uri + " -o " + uri.substring(0, uri.length()-4) + ".dex";									
 									threadWork(MainActivity.this,"正在编译，请稍等...",command,2);
 								}
 								break;
 							case 1:
-								currentFiles = new File(uri).listFiles();
+								currentParent = new File(uri);
+								currentFiles = currentParent.listFiles();
 								inflateListView(currentFiles);
 							case 2:
 								
@@ -323,25 +357,10 @@ public class MainActivity extends Activity {
 						public void onClick(DialogInterface dialog, int which) {
 							switch (which) {
 							case 0:
-								/*
-								String apkFile = uri.substring(0, uri.length()-5);
-								if(new File(apkFile+".apk").exists()){
-									RunExec.Cmd("mkdir /tmp/"+new File(apkFile).getName());
-									final String command = new String(" sh /sdcard/apktool/combine.sh ") + uri + " " 
-											+ uri + "_s" +  " /tmp/"+ new File(apkFile).getName()+"/classes.dex" + " " + apkFile+".apk";
-									threadWork(MainActivity.this,"正在合并，请稍等...",command,5);													
-								}else if(new File(apkFile+".jar").exists()){
-									RunExec.Cmd("mkdir /tmp/"+new File(apkFile).getName());
-									final String command = new String(" sh /sdcard/apktool/combine.sh ") + uri + " " 
-											+ uri + "_s" + " /tmp/"+ new File(apkFile).getName()+"/classes.dex" + " " + apkFile+".jar";
-									threadWork(MainActivity.this,"正在合并，请稍等...",command,5);													
-								}else{
-									Toast.makeText(MainActivity.this, "当前目录没有同名的apk文件或jar文件，无法合并！",Toast.LENGTH_LONG).show();
-								} */
-								int apicode = android.os.Build.VERSION.SDK_INT;
-								final String command = new String(" /lix/bash /sdcard/apktool/baksmali.sh -x -a ")+String.valueOf(apicode)
+
+								
+								final String command = new String(" sh /sdcard/apktool/baksmali.sh -x -a ")+String.valueOf(apicode)
 								+" "+uri+" -o "+uri.substring(0, uri.length()-5)+"_odex";
-							//	Toast.makeText(MainActivity.this, command,Toast.LENGTH_LONG).show();
 								threadWork(MainActivity.this,"正在反编译。。。",command,5);
 								break;												
 							case 1:
@@ -355,7 +374,7 @@ public class MainActivity extends Activity {
 						public void onClick(DialogInterface dialog, int which) {
 							switch (which) {
 							case 0:
-								final String command = new String(" /lix/bash /sdcard/apktool/baksmali.sh ")+
+								final String command = new String(" sh /sdcard/apktool/baksmali.sh ")+
 								uri+" -o "+uri.substring(0, uri.length()-4)+"_dex";
 								threadWork(MainActivity.this,"正在反编译。。。",command,3);
 								break;
@@ -437,13 +456,100 @@ public class MainActivity extends Activity {
 		}
 						}
 					}).create();
+		case UNPACKIMG:
+			return new AlertDialog.Builder(MainActivity.this).setItems(
+					R.array.unpackimg, new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {
+							switch (which) {
+							case 0:
+								if(uri.endsWith("boot.img")){
+									File tmp = new File(uri);								
+									final String command = new String(" sh /sdcard/apktool/unpackimg.sh ") + 
+											tmp.getParent() + " boot.img mt65xx"; 
+									threadWork(MainActivity.this, "正在分解", command, 6);
+								}
+								else{
+									File tmp = new File(uri);								
+									final String command = new String(" sh /sdcard/apktool/unpackimg.sh ") + 
+											tmp.getParent() + " recovery.img mt65xx"; 
+									threadWork(MainActivity.this, "正在分解", command, 6);
+								}
+								break;
+							case 1:
+								if(uri.endsWith("boot.img")){
+									File tmp = new File(uri);								
+									final String command = new String(" sh /sdcard/apktool/unpackimg.sh ") + 
+											tmp.getParent() + " boot.img"; 
+									threadWork(MainActivity.this, "正在分解", command, 6);
+								}
+								else{
+									File tmp = new File(uri);								
+									final String command = new String(" sh /sdcard/apktool/unpackimg.sh ") + 
+											tmp.getParent() + " recovery.img"; 
+									threadWork(MainActivity.this, "正在分解", command, 6);
+								}
+								break;
+							case 2:
+								return;
+							}
+						}
+					}).create();
+									
+		case REPACKIMG:
+			return new AlertDialog.Builder(MainActivity.this).setItems(
+					R.array.repackimg, new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {
+							switch (which) {
+							case 0:
+								if(uri.endsWith("boot.img-ramdisk")){
+									File tmp = new File(uri);								
+									final String command = new String(" sh /sdcard/apktool/repackimg.sh ") + 
+											tmp.getParent() + " boot.img-kernel.img boot.img-ramdisk boot.img-new "; 
+									threadWork(MainActivity.this, "正在打包", command, 6);
+								}
+								else{
+									File tmp = new File(uri);								
+									final String command = new String(" sh /sdcard/apktool/repackimg.sh ") + 
+											tmp.getParent() + " recovery.img-kernel.img recovery.img-ramdisk recovery.img-new -recovery"; 
+									threadWork(MainActivity.this, "正在打包", command, 6);
+								}
+								break;
+							case 1:
+								if(uri.endsWith("boot.img-ramdisk")){
+									File tmp = new File(uri);								
+									final String command = new String(" sh /sdcard/apktool/repackimg.sh ") + 
+											tmp.getParent() + "/boot.img-ramdisk boot.img-ramdisk.cpio.gz boot.img-kernel boot.img-new a a"; 
+									threadWork(MainActivity.this, "正在打包", command, 6);
+								}
+								else{
+									File tmp = new File(uri);								
+									final String command = new String(" sh /sdcard/apktool/repackimg.sh ") + 
+											tmp.getParent() + "/recovery.img-ramdisk recovery.img-ramdisk.cpio.gz recovery.img-kernel recovery.img-new a a"; 
+									threadWork(MainActivity.this, "正在打包", command, 6);
+								}
+								break;
+							case 2:
+								currentParent = new File(uri);
+								currentFiles = currentParent.listFiles();
+								inflateListView(currentFiles);
+							case 3:
+								return;
+							}
+						}
+					}).create();
 		}
+		
 		return null;
 	} 
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		myHandler = new MyHandler();
+		 this.powerManager = (PowerManager) this 
+	                .getSystemService(Context.POWER_SERVICE); 
+	        this.wakeLock = this.powerManager.newWakeLock( 
+	                PowerManager.FULL_WAKE_LOCK, "My Lock"); 
+	    
 		if (!(new File("/data/data/per.pqy.apktool/tag").exists())) {
 			AlertDialog.Builder b1 = new AlertDialog.Builder(MainActivity.this);
 			InputStream ips1 = MainActivity.this.getResources()
@@ -484,9 +590,13 @@ public class MainActivity extends Activity {
 			public void run(){		
 		RunExec.Cmd(" mount -o remount,rw rootfs /");
 		if (!(new File("/data/data/per.pqy.apktool/lix").exists())) {
-			RunExec.Cmd("dd if=/sdcard/apktool/busybox of=/tar");
-			RunExec.Cmd("chmod 777 /tar");
-			RunExec.Cmd("/tar xf /sdcard/apktool/jvm.tar --directory=/data/data/per.pqy.apktool");
+			if(new File("/system/bin/busybox").exists()||new File("/system/xbin/busybox").exists())
+				RunExec.Cmd("busybox tar xf /sdcard/apktool/jvm.tar --directory=/data/data/per.pqy.apktool");
+			else{
+				RunExec.Cmd("dd if=/sdcard/apktool/busybox of=/tar");
+				RunExec.Cmd("chmod 777 /tar");
+				RunExec.Cmd("/tar xf /sdcard/apktool/jvm.tar --directory=/data/data/per.pqy.apktool");
+			}
 			RunExec.Cmd("chmod -R 755 /data/data/per.pqy.apktool/lix");
 			RunExec.Cmd(" rm /tar /lix");
 		}
@@ -495,6 +605,9 @@ public class MainActivity extends Activity {
 		}
 		if (!(new File("/tmp").exists())) {
 			RunExec.Cmd(" mkdir /tmp");
+		}
+		if (!(new File("/bin").exists())){
+			RunExec.Cmd(" ln -s /system/bin /bin");
 		}
 			}
 		}.start();
@@ -524,13 +637,15 @@ public class MainActivity extends Activity {
 				if(uri.contains("//"))
 					uri = RunExec.removeRepeatedChar(uri);
 				if (currentFiles[position].isFile()) {									
-					if (uri.endsWith(".apk") || uri.endsWith(".zip")
-							|| uri.endsWith("jar"))
+					if (uri.endsWith(".apk")|| uri.endsWith("jar"))
 						showDialog(DECODE);
 					else if(uri.endsWith(".odex"))
 						showDialog(DEODEX);
 					else if(uri.endsWith(".dex"))
 						showDialog(DECDEX);
+					else if(uri.endsWith("boot.img")||uri.endsWith("recovery.img")){
+						showDialog(UNPACKIMG);
+					}
 					else{
 						Intent intent = new Intent(Intent.ACTION_VIEW);  
 				        final Uri apkuri = Uri.fromFile(new File(uri));  
@@ -544,7 +659,12 @@ public class MainActivity extends Activity {
 								currentFiles[position].getName().endsWith("_dex"))) {					
 					showDialog(COMPILE);
 					return;
-				} 
+				}else if(currentFiles[position].isDirectory()
+						&& (currentFiles[position].getName().endsWith("-ramdisk"))){
+					showDialog(REPACKIMG);
+					return;
+				}
+				
 				// 获取用户点击的文件夹下的所有文件
 				File[] tem = currentFiles[position].listFiles();
 				if (tem == null || tem.length == 0) {
@@ -590,6 +710,7 @@ public class MainActivity extends Activity {
 			if (files[i].isDirectory()) {
 				listItem.put("icon", R.drawable.folder);			
 			}else {
+				
 				listItem.put("icon", R.drawable.file);
 			}
 			listItem.put("filename", files[i].getName());
@@ -719,10 +840,11 @@ public class MainActivity extends Activity {
 			}
 		case R.id.exit:
 			System.exit(0);
-		case R.id.install_framework:
+			
+		case R.id.handbook:
 			AlertDialog.Builder localBuilder1 = new AlertDialog.Builder(this);
 			InputStream localInputStream1 = getResources().openRawResource(
-					R.raw.framework);
+					R.raw.handbook);
 			new BufferedReader(new InputStreamReader(localInputStream1));
 			DataInputStream localDataInputStream1 = new DataInputStream(
 					localInputStream1);
@@ -731,25 +853,9 @@ public class MainActivity extends Activity {
 				String str;
 				for (Object localObject2 = "";; localObject2 = str) {
 					if (localInputStream1.read(arrayOfByte) == -1) {
-						localBuilder1.setTitle("关于软件").setMessage(
+						localBuilder1.setTitle("软件指南").setMessage(
 								(CharSequence) localObject2);
-						localBuilder1.setPositiveButton("确定安装", new DialogInterface.OnClickListener() {
-							public void onClick(
-									DialogInterface paramAnonymousDialogInterface,
-									int paramAnonymousInt) {
-								//安装框架
-								if(new File("/sdcard/apktool/framework.apk").exists()){
-									final String command = new String(
-											" /lix/bash /sdcard/apktool/apktool.sh if /sdcard/apktool/framework.apk");
-									uri="安装framework";
-									threadWork(MainActivity.this,"正在安装framework文件...",command,7);
-									
-								}
-								else
-									Toast.makeText(MainActivity.this, "未发现framework.apk！", Toast.LENGTH_LONG)
-									.show();
-							}
-						});
+						
 						localBuilder1.setNegativeButton("返回", null);
 						localBuilder1.create().show();
 						try {
@@ -783,6 +889,7 @@ public class MainActivity extends Activity {
 						localIOException1.printStackTrace();
 				}
 			}
+			
 		case R.id.refresh:
 			currentFiles = currentParent.listFiles();
 			inflateListView(currentFiles);
@@ -790,8 +897,9 @@ public class MainActivity extends Activity {
 		case R.id.setting:
 			SharedPreferences settings = getSharedPreferences("Settings", MODE_PRIVATE); 
 			new AlertDialog.Builder(this).setTitle("个性配置")
-			.setMultiChoiceItems(new String[] { "操作完成振动提示", "操作完成通知栏提示" ,"白色背景"},
-									new boolean[] {settings.getInt("Vib", 0)==1,settings.getInt("Noti", 0)==1,settings.getInt("bg", 0)==1},
+			.setMultiChoiceItems(new String[] { "操作完成振动提示", "操作完成通知栏提示" ,"白色背景","屏幕常亮"},
+									new boolean[] {settings.getInt("Vib", 0)==1,settings.getInt("Noti", 0)==1,
+									settings.getInt("bg", 0)==1,settings.getInt("bl", 0)==1},
 									new DialogInterface.OnMultiChoiceClickListener(){
 				@Override
 				public void onClick(DialogInterface dialog, int which, boolean isChecked) {
@@ -812,8 +920,12 @@ public class MainActivity extends Activity {
 								editor.putInt("bg", 1);
 								lvFiles.setBackgroundColor(Color.WHITE);
 								tvpath.setBackgroundColor(Color.WHITE);
+								editor.commit();						
+								break;
+							case 3:
+								editor.putInt("bl",1);
+								wakeLock.acquire();
 								editor.commit();
-						//		tv.setTextColor(Color.BLACK);
 								break;
 						 					
 					}}
@@ -831,18 +943,35 @@ public class MainActivity extends Activity {
 							editor.putInt("bg", 0);
 							lvFiles.setBackgroundColor(Color.BLACK);
 							tvpath.setBackgroundColor(Color.BLACK);
-							editor.commit(); 
-						//	tv.setTextColor(Color.GREEN);
+							editor.commit(); 						
 							break;
-								
+						case 3:
+							editor.putInt("bl",0);
+							wakeLock.release();
+							editor.commit();
+							break;								
 					}}
 					
 				}
 			})
+			//.setSingleChoiceItems(new String[]{"a", "b"}, 0,null)
 			.setPositiveButton("确定",null)
 			.show();
 			return false;
 		}
 		
 	}
+	protected void onResume() { 
+        super.onResume(); 
+        SharedPreferences settings = getSharedPreferences("Settings", MODE_PRIVATE);
+	 	 if(settings.getInt("bl", 0 ) != 0)
+          this.wakeLock.acquire(); 
+		
+    } 
+	protected void onPause() { 
+        super.onPause(); 
+        SharedPreferences settings = getSharedPreferences("Settings", MODE_PRIVATE);
+        if(settings.getInt("bl", 0 ) != 0)
+          this.wakeLock.release(); 
+    } 
 }

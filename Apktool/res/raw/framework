@@ -1,3 +1,0 @@
-本功能可以安装本机特定的framework文件。如果反编译出现类似“W: Could not decode attr value, using undecoded value instead: ns=android, name=drawable, value=0x02020542”的信息，就可以考虑安装了。安装方式如下：
-请自行确定哪个才是需要的framework文件（一般是framework-res.apk)。然后复制一份到内存卡apktool目录下，改名为framework.apk.然后再点击本界面的“确定安装”按钮。
-注意，由于framework文件存储在内存(运存)中，因此不宜乱安装大量framework.

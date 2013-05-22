@@ -85,10 +85,10 @@ public class MainActivity extends Activity {
 			}
 			if(settings.getInt("Noti", 0 ) != 0){
 				NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-				Notification notification = new Notification(R.drawable.ic_launcher,"操作完成！",System.currentTimeMillis());
+				Notification notification = new Notification(R.drawable.ic_launcher,getString(R.string.op_done),System.currentTimeMillis());
 				Context context = getApplicationContext(); 
 				CharSequence contentTitle = b.getString("filename"); 
-				CharSequence contentText =  "操作完成!"; 
+				CharSequence contentText =  getString(R.string.op_done); 
 				Intent notificationIntent = MainActivity.this.getIntent();
 				PendingIntent contentIntent = PendingIntent.getActivity(MainActivity.this,0,notificationIntent,0);
 				notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);	
@@ -99,24 +99,24 @@ public class MainActivity extends Activity {
 			Toast.makeText(MainActivity.this, str,Toast.LENGTH_LONG).show();
 			AlertDialog.Builder b1 = new AlertDialog.Builder(
 					MainActivity.this);
-			String tmp_str = b.getString("filename")+"\n"+ new String("本次操作共耗时：");
+			String tmp_str = b.getString("filename")+"\n"+ getString(R.string.cost_time);
 			
 			long time = (System.currentTimeMillis() - b.getLong("time"))/1000;
 			if(time > 3600){
-				tmp_str += Integer.toString((int) (time/3600)) + "时" + Integer.toString((int) (time%3600)/60) +
-						"分" + Integer.toString((int) (time%60)) + "秒";
+				tmp_str += Integer.toString((int) (time/3600)) + getString(R.string.hour) + Integer.toString((int) (time%3600)/60) +
+						getString(R.string.minute) + Integer.toString((int) (time%60)) + getString(R.string.second);
 			}
 			else if(time > 60){
 				tmp_str +=  Integer.toString((int) (time%3600)/60) +
-						"分" + Integer.toString((int) (time%60)) + "秒";
+						getString(R.string.minute) + Integer.toString((int) (time%60)) + getString(R.string.second);
 			}
 			else{
-				tmp_str +=  Integer.toString((int) time) + "秒";
+				tmp_str +=  Integer.toString((int) time) + getString(R.string.second);
 			}
 			b1.setTitle(tmp_str)
 			.setMessage(b.getString("output"))
-			.setPositiveButton("确定", null)
-			.setNeutralButton(("复制"),
+			.setPositiveButton(getString(R.string.ok), null)
+			.setNeutralButton((getString(R.string.copy)),
 					new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog,
@@ -135,37 +135,37 @@ public class MainActivity extends Activity {
 			final Bundle b = msg.getData();
 			switch (b.getInt("what")) {
 			case 0:
-				doWork("反编译完成！",b);
+				doWork(getString(R.string.decompile_all_finish),b);
 				break;
 			case 1:
-				doWork("签名完成！",b);
+				doWork(getString(R.string.sign_finish),b);
 				break;
 			case 2:
-				doWork("编译完成！",b);
+				doWork(getString(R.string.recompile_finish),b);
 				break;
 			case 3:
-				doWork("反编译dex完成！",b);
+				doWork(getString(R.string.decompile_dex_finish),b);
 				break;
 			case 4:
-				doWork("反编译资源完成！",b);
+				doWork(getString(R.string.decompile_res_finish),b);
 				break;
 			case 5:
-				doWork("odex反编译完成！",b);
+				doWork(getString(R.string.decompile_odex_finish),b);
 				break;
 			case 6:
-				doWork("操作完成！",b);
+				doWork(getString(R.string.op_done),b);
 				break;
 			case 7:
-				doWork("安装完成!",b);
+				doWork(getString(R.string.import_finish),b);
 				break;
 			case 8:
-				doWork("优化完成！",b);
+				doWork(getString(R.string.align_finish),b);
 				break;
 			case 9:
-				doWork("添加完成！",b);
+				doWork(getString(R.string.add_finish),b);
 				break;
 			case 10:
-				doWork("删除完成！",b);
+				doWork(getString(R.string.delete_finish),b);
 				break;
 			}
 		}
@@ -227,7 +227,7 @@ public class MainActivity extends Activity {
 		myDialog.setMessage(message);
 		myDialog.setIndeterminate(true);
 		myDialog.setCancelable(false);
-		myDialog.setButton(DialogInterface.BUTTON_POSITIVE, "放入后台", new DialogInterface.OnClickListener() {
+		myDialog.setButton(DialogInterface.BUTTON_POSITIVE, getString(R.string.put_background), new DialogInterface.OnClickListener() {
 		    @Override
 		    public void onClick(DialogInterface dialog, int which) {
 		        myDialog.dismiss();
@@ -255,32 +255,32 @@ public class MainActivity extends Activity {
 							case 0:
 								final	String command = new String(" sh /sdcard/apktool/apktool.sh d -f ") 
 								+ uri + " " + uri.substring(0, uri.length()-4) + "_src";
-								threadWork(MainActivity.this,"正在反编译。。。",command,0);
+								threadWork(MainActivity.this,getString(R.string.decompiling),command,0);
 								break;									
 							case 1:
 								final	String command1 = new String(" sh /sdcard/apktool/apktool.sh d -f -r ") 
 								+ uri + " " + uri.substring(0, uri.length()-4) + "_src";
-								threadWork(MainActivity.this,"正在反编译dex。。。",command1,3);
+								threadWork(MainActivity.this,getString(R.string.decompiling),command1,3);
 								break;	
 							case 2:
 								final String command2 = new String(" sh /sdcard/apktool/apktool.sh d -f -s ") 
 								+ uri + " " + uri.substring(0, uri.length()-4) + "_src";
-								threadWork(MainActivity.this,"正在反编译资源。。。",command2,4);								
+								threadWork(MainActivity.this,getString(R.string.decompiling),command2,4);								
 								break;							
 							case 3:		
 								final String command3 = new String(" sh /sdcard/apktool/signapk.sh ") 
 								+ uri + " " + uri.substring(0, uri.length()-4) + "_sign.apk";
-								threadWork(MainActivity.this,"正在签名。。。",command3,1);					
+								threadWork(MainActivity.this,getString(R.string.signing),command3,1);					
 								break;
 							case 4:								
 									final String command4 = new String("/lix/dexopt-wrapper ") 
 									+ uri + " " + uri.substring(0, uri.length()-3) + "odex";
-									threadWork(MainActivity.this,"正在生成。。。",command4,6);	
+									threadWork(MainActivity.this,getString(R.string.making_odex),command4,6);	
 									break;
 								
 							case 5:
 								final String command5 = new String("/lix/zipalign -f -v 4 ") + uri + " " + uri.substring(0, uri.length()-4)+"_zipalign.apk";
-								threadWork(MainActivity.this,"正在优化。。。",command5,8);
+								threadWork(MainActivity.this,getString(R.string.aligning),command5,8);
 								break;
 							case 6:
 								Intent intent = new Intent(Intent.ACTION_VIEW);  
@@ -290,32 +290,32 @@ public class MainActivity extends Activity {
 						        break;
 							case 7:
 								final String command6 = new String("/lix/7za d -tzip ") + uri + " classes.dex";
-								threadWork(MainActivity.this,"正在删除。。。",command6,10);
+								threadWork(MainActivity.this,getString(R.string.deleting),command6,10);
 								break;
 							case 8:
 								File f = new File(uri);
 								if(!new File(f.getParent()+"/META-INF").exists()){
 									final String command7 = new String("sh /sdcard/apktool/tool.sh ")+f.getParent() +" " + f.getName();
-									threadWork(MainActivity.this,"正在提取。。。",command7,6);
+									threadWork(MainActivity.this,getString(R.string.extracting),command7,6);
 								}
 								else
-									Toast.makeText(MainActivity.this, "当前目录已存在META-INF,请先删除之！", Toast.LENGTH_LONG).show();
+									Toast.makeText(MainActivity.this, getString(R.string.dir_exist), Toast.LENGTH_LONG).show();
 								break;
 							case 9:
 								final String command8 = new String("/lix/7za d -tzip ") + uri + " META-INF";
-								threadWork(MainActivity.this,"正在删除。。。",command8,10);
+								threadWork(MainActivity.this,getString(R.string.deleting),command8,10);
 								break;
 							case 10:
 								String str = new File(uri).getParent();
 								if(new File(str+"/META-INF").exists()){
 									final String command9 = new String("/lix/7za a -tzip ") + uri + " "+ str+"/META-INF";
-									threadWork(MainActivity.this,"正在添加。。。",command9,8);}
+									threadWork(MainActivity.this,getString(R.string.adding),command9,8);}
 								else
-									Toast.makeText(MainActivity.this, "当前目录没有签名文件夹META-INF！",Toast.LENGTH_LONG).show();
+									Toast.makeText(MainActivity.this, getString(R.string.dir_not_exist),Toast.LENGTH_LONG).show();
 								break;
 							case 11:
 								final String command10 = new String(" sh /sdcard/apktool/apktool.sh if ")+uri;								
-								threadWork(MainActivity.this,"正在安装framework文件...",command10,7);
+								threadWork(MainActivity.this,getString(R.string.importing_framework),command10,7);
 							case 12:
 								return;								
 							}
@@ -330,15 +330,15 @@ public class MainActivity extends Activity {
 								if(uri.endsWith("_src")){
 								final String command = new String(" sh /sdcard/apktool/apktool.sh b -f -a /lix/aapt ")
 								+ uri + " " + uri + ".apk";								
-								threadWork(MainActivity.this,"正在编译，请稍等...",command,2);			
+								threadWork(MainActivity.this,getString(R.string.recompiling),command,2);			
 								}else if(uri.endsWith("_odex")){
 									final String command = new String(" sh /sdcard/apktool/smali.sh -a ")
 									+String.valueOf(apicode) +" " + uri + " -o " + uri.substring(0, uri.length()-5) + ".dex";									
-									threadWork(MainActivity.this,"正在编译，请稍等...",command,2);
+									threadWork(MainActivity.this,getString(R.string.recompiling),command,2);
 								}else if(uri.endsWith("_dex")){
 									final String command = new String(" sh /sdcard/apktool/smali.sh -a ")
 									+String.valueOf(apicode) +" "+ uri + " -o " + uri.substring(0, uri.length()-4) + ".dex";									
-									threadWork(MainActivity.this,"正在编译，请稍等...",command,2);
+									threadWork(MainActivity.this,getString(R.string.recompiling),command,2);
 								}
 								break;
 							case 1:
@@ -361,7 +361,7 @@ public class MainActivity extends Activity {
 								
 								final String command = new String(" sh /sdcard/apktool/baksmali.sh -x -a ")+String.valueOf(apicode)
 								+" "+uri+" -o "+uri.substring(0, uri.length()-5)+"_odex";
-								threadWork(MainActivity.this,"正在反编译。。。",command,5);
+								threadWork(MainActivity.this,getString(R.string.decompiling),command,5);
 								break;												
 							case 1:
 								return;
@@ -376,27 +376,27 @@ public class MainActivity extends Activity {
 							case 0:
 								final String command = new String(" sh /sdcard/apktool/baksmali.sh ")+
 								uri+" -o "+uri.substring(0, uri.length()-4)+"_dex";
-								threadWork(MainActivity.this,"正在反编译。。。",command,3);
+								threadWork(MainActivity.this,getString(R.string.decompiling),command,3);
 								break;
 							case 1:
 								String apkFile = uri.substring(0,uri.length()-3)+"apk";
 								if(new File(apkFile).exists()){
 									RunExec.Cmd(new String(" mv ")+uri+" "+new File(uri).getParent()+"/classes.dex");
 									final String command1 = new String(" /lix/7za a -tzip "+apkFile+" "+new File(uri).getParent()+"/classes.dex");
-									threadWork(MainActivity.this,"正在添加。。。",command1,9);
+									threadWork(MainActivity.this,getString(R.string.adding),command1,9);
 								}
 								else
-									Toast.makeText(MainActivity.this, "不存在同名apk文件！", Toast.LENGTH_LONG).show();
+									Toast.makeText(MainActivity.this, getString(R.string.apk_not_exist), Toast.LENGTH_LONG).show();
 								break;
 							case 2:
 								String jarFile = uri.substring(0,uri.length()-3)+"jar";
 								if(new File(jarFile).exists()){
 									RunExec.Cmd(new String(" mv ")+uri+" "+new File(uri).getParent()+"/classes.dex");
 									final String command2 = new String(" /lix/7za a -tzip "+jarFile+" "+new File(uri).getParent()+"/classes.dex");
-									threadWork(MainActivity.this,"正在添加。。。",command2,9);
+									threadWork(MainActivity.this,getString(R.string.adding),command2,9);
 								}
 								else
-									Toast.makeText(MainActivity.this, "不存在同名jar文件！", Toast.LENGTH_LONG).show();
+									Toast.makeText(MainActivity.this, getString(R.string.jar_not_exist), Toast.LENGTH_LONG).show();
 							case 3:
 								return;
 							}
@@ -411,9 +411,9 @@ public class MainActivity extends Activity {
 								final EditText et = new EditText(MainActivity.this);
 								et.setText(new File(uri).getName());
 								new AlertDialog.Builder(MainActivity.this)
-								.setTitle("新名称")
+								.setTitle(getString(R.string.new_name))
 								.setView(et)
-								.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+								.setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface dialog,int which) {
 								// TODO Auto-generated method stub
@@ -425,19 +425,19 @@ public class MainActivity extends Activity {
 									inflateListView(currentFiles);
 								}														
 								})
-								.setNegativeButton("取消", null).show();
+								.setNegativeButton(getString(R.string.cancel), null).show();
 								break;
 							case 1:
 								new AlertDialog.Builder(MainActivity.this)
-								.setTitle("删除？(注意：文件名不能包含中文）")
-								.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+								.setTitle(getString(R.string.want_to_delete))
+								.setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface dialog,int which) {
 								// TODO Auto-generated method stub	
 									File file = new File(uri);
 									if(file.isDirectory()){
 									final String command = new String(" rm -r ")+uri;
-									threadWork(MainActivity.this,"正在删除。。。",command,10);
+									threadWork(MainActivity.this,getString(R.string.deleting),command,10);
 									}
 									else{
 										file.delete();
@@ -446,7 +446,7 @@ public class MainActivity extends Activity {
 									}
 								}														
 								})
-								.setNegativeButton("取消", null).show();
+								.setNegativeButton(getString(R.string.cancel), null).show();
 								break;
 							case 2:
 								RunExec.Cmd(new String("chmod 777 "+uri));
@@ -466,13 +466,13 @@ public class MainActivity extends Activity {
 									File tmp = new File(uri);								
 									final String command = new String(" sh /sdcard/apktool/unpackimg.sh ") + 
 											tmp.getParent() + " boot.img mt65xx"; 
-									threadWork(MainActivity.this, "正在分解", command, 6);
+									threadWork(MainActivity.this, getString(R.string.extracting), command, 6);
 								}
 								else{
 									File tmp = new File(uri);								
 									final String command = new String(" sh /sdcard/apktool/unpackimg.sh ") + 
 											tmp.getParent() + " recovery.img mt65xx"; 
-									threadWork(MainActivity.this, "正在分解", command, 6);
+									threadWork(MainActivity.this, getString(R.string.extracting), command, 6);
 								}
 								break;
 							case 1:
@@ -480,13 +480,13 @@ public class MainActivity extends Activity {
 									File tmp = new File(uri);								
 									final String command = new String(" sh /sdcard/apktool/unpackimg.sh ") + 
 											tmp.getParent() + " boot.img"; 
-									threadWork(MainActivity.this, "正在分解", command, 6);
+									threadWork(MainActivity.this, getString(R.string.extracting), command, 6);
 								}
 								else{
 									File tmp = new File(uri);								
 									final String command = new String(" sh /sdcard/apktool/unpackimg.sh ") + 
 											tmp.getParent() + " recovery.img"; 
-									threadWork(MainActivity.this, "正在分解", command, 6);
+									threadWork(MainActivity.this, getString(R.string.extracting), command, 6);
 								}
 								break;
 							case 2:
@@ -505,13 +505,13 @@ public class MainActivity extends Activity {
 									File tmp = new File(uri);								
 									final String command = new String(" sh /sdcard/apktool/repackimg.sh ") + 
 											tmp.getParent() + " boot.img-kernel.img boot.img-ramdisk boot.img-new "; 
-									threadWork(MainActivity.this, "正在打包", command, 6);
+									threadWork(MainActivity.this, getString(R.string.compressing), command, 6);
 								}
 								else{
 									File tmp = new File(uri);								
 									final String command = new String(" sh /sdcard/apktool/repackimg.sh ") + 
 											tmp.getParent() + " recovery.img-kernel.img recovery.img-ramdisk recovery.img-new -recovery"; 
-									threadWork(MainActivity.this, "正在打包", command, 6);
+									threadWork(MainActivity.this, getString(R.string.compressing), command, 6);
 								}
 								break;
 							case 1:
@@ -519,13 +519,13 @@ public class MainActivity extends Activity {
 									File tmp = new File(uri);								
 									final String command = new String(" sh /sdcard/apktool/repackimg.sh ") + 
 											tmp.getParent() + "/boot.img-ramdisk boot.img-ramdisk.cpio.gz boot.img-kernel boot.img-new a a"; 
-									threadWork(MainActivity.this, "正在打包", command, 6);
+									threadWork(MainActivity.this, getString(R.string.compressing), command, 6);
 								}
 								else{
 									File tmp = new File(uri);								
 									final String command = new String(" sh /sdcard/apktool/repackimg.sh ") + 
 											tmp.getParent() + "/recovery.img-ramdisk recovery.img-ramdisk.cpio.gz recovery.img-kernel recovery.img-new a a"; 
-									threadWork(MainActivity.this, "正在打包", command, 6);
+									threadWork(MainActivity.this, getString(R.string.compressing), command, 6);
 								}
 								break;
 							case 2:
@@ -561,9 +561,9 @@ public class MainActivity extends Activity {
 				String str = "";
 				while (ips1.read(bytes) != -1)
 					str = str + new String(bytes, "UTF-8");
-				b1.setTitle("作者声明").setMessage(str);
-				b1.setPositiveButton("确定", null);
-				b1.setNeutralButton(("不再提示"),
+				b1.setTitle(getString(R.string.declaration)).setMessage(str);
+				b1.setPositiveButton(getString(R.string.ok), null);
+				b1.setNeutralButton((getString(R.string.never_remind)),
 						new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog,
@@ -750,7 +750,7 @@ public class MainActivity extends Activity {
 		lvFiles.setAdapter(adapter);
 		
 		try {
-			tvpath.setText("当前路径:" + currentParent.getAbsolutePath());
+			tvpath.setText(getString(R.string.current_path) + currentParent.getAbsolutePath());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -766,14 +766,14 @@ public class MainActivity extends Activity {
 				} else {
 					AlertDialog.Builder localBuilder = new AlertDialog.Builder(
 							this);
-					localBuilder.setTitle("退出?");
-					localBuilder.setPositiveButton("是",
+					localBuilder.setTitle(getString(R.string.want_to_exit));
+					localBuilder.setPositiveButton(getString(R.string.yes),
 							new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface paramAnonymousDialogInterface,int paramAnonymousInt) {
 							System.exit(0);
 						}
 					});
-					localBuilder.setNegativeButton("否",null);
+					localBuilder.setNegativeButton(getString(R.string.no),null);
 					localBuilder.create().show();
 				}
 			} catch (Exception localException) {
@@ -803,9 +803,9 @@ public class MainActivity extends Activity {
 				String str;
 				for (Object localObject2 = "";; localObject2 = str) {
 					if (localInputStream.read(arrayOfByte) == -1) {
-						localBuilder.setTitle("关于软件").setMessage(
+						localBuilder.setTitle(getString(R.string.about)).setMessage(
 								(CharSequence) localObject2);
-						localBuilder.setPositiveButton("确定", null);
+						localBuilder.setPositiveButton(getString(R.string.ok), null);
 						localBuilder.create().show();
 						try {
 							localDataInputStream.close();
@@ -856,7 +856,7 @@ public class MainActivity extends Activity {
 						localBuilder1.setTitle("软件指南").setMessage(
 								(CharSequence) localObject2);
 						
-						localBuilder1.setNegativeButton("返回", null);
+						localBuilder1.setNegativeButton(getString(R.string.ok), null);
 						localBuilder1.create().show();
 						try {
 							localDataInputStream1.close();
@@ -896,8 +896,8 @@ public class MainActivity extends Activity {
 			return false;	
 		case R.id.setting:
 			SharedPreferences settings = getSharedPreferences("Settings", MODE_PRIVATE); 
-			new AlertDialog.Builder(this).setTitle("个性配置")
-			.setMultiChoiceItems(new String[] { "操作完成振动提示", "操作完成通知栏提示" ,"白色背景","屏幕常亮"},
+			new AlertDialog.Builder(this).setTitle(getString(R.string.setting))
+			.setMultiChoiceItems(new String[] { getString(R.string.vibration), getString(R.string.notify) ,getString(R.string.white_background),getString(R.string.keep_screen_on)},
 									new boolean[] {settings.getInt("Vib", 0)==1,settings.getInt("Noti", 0)==1,
 									settings.getInt("bg", 0)==1,settings.getInt("bl", 0)==1},
 									new DialogInterface.OnMultiChoiceClickListener(){
@@ -955,7 +955,7 @@ public class MainActivity extends Activity {
 				}
 			})
 			//.setSingleChoiceItems(new String[]{"a", "b"}, 0,null)
-			.setPositiveButton("确定",null)
+			.setPositiveButton(getString(R.string.ok),null)
 			.show();
 			return false;
 		}

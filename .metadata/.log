@@ -12200,3 +12200,359 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 
 !ENTRY org.eclipse.core.jobs 2 2 2013-05-13 16:09:04.204
 !MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.android.ide.eclipse.adt.internal.sdk.Sdk$5
+!SESSION 2013-05-22 10:22:32.867 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.7.0_21
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=zh_CN
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.905
+!MESSAGE NLS unused message: ViewsPreference_currentPresentation in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.906
+!MESSAGE NLS unused message: ViewsPreference_currentPresentationFormat in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.906
+!MESSAGE NLS unused message: ViewsPreference_presentationConfirm_title in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.907
+!MESSAGE NLS unused message: ViewsPreference_presentationConfirm_message in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.907
+!MESSAGE NLS unused message: ViewsPreference_presentationConfirm_yes in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.912
+!MESSAGE NLS unused message: ViewsPreference_presentationConfirm_no in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.912
+!MESSAGE NLS unused message: ViewsPreference_editors in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.913
+!MESSAGE NLS unused message: ViewsPreference_editors_top in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.913
+!MESSAGE NLS unused message: ViewsPreference_editors_bottom in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.913
+!MESSAGE NLS unused message: ViewsPreference_views in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.913
+!MESSAGE NLS unused message: ViewsPreference_views_top in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.914
+!MESSAGE NLS unused message: ViewsPreference_views_bottom in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.914
+!MESSAGE NLS unused message: ViewsPreference_perspectiveBar in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.914
+!MESSAGE NLS unused message: ViewsPreference_perspectiveBar_topRight in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.914
+!MESSAGE NLS unused message: ViewsPreference_perspectiveBar_topLeft in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.915
+!MESSAGE NLS unused message: ViewsPreference_perspectiveBar_left in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.915
+!MESSAGE NLS unused message: ViewsPreference_traditionalTabs in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.915
+!MESSAGE NLS unused message: ViewsPreference_currentTheme in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.915
+!MESSAGE NLS unused message: ViewsPreference_currentThemeDescription in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.916
+!MESSAGE NLS unused message: ViewsPreference_override in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.916
+!MESSAGE NLS unused message: ViewsPreference_currentThemeFormat in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:22:48.916
+!MESSAGE NLS unused message: ViewsPreference_restartRequestJobName in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:23:07.195
+!MESSAGE NLS unused message: JavaEditorPreferencePage_highlightMatchingBrackets in: org.eclipse.jdt.internal.ui.preferences.PreferencesMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:23:10.140
+!MESSAGE NLS unused message: GotoMatchingBracket_error_invalidSelection in: org.eclipse.jdt.internal.ui.javaeditor.JavaEditorMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:26:10.205
+!MESSAGE NLS unused message: SourceAttachmentBlock_filename_label in: org.eclipse.jdt.internal.ui.wizards.NewWizardMessages
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 10:26:10.206
+!MESSAGE NLS unused message: SourceAttachmentBlock_filename_internal_button in: org.eclipse.jdt.internal.ui.wizards.NewWizardMessages
+
+!ENTRY org.eclipse.ui 2 2 2013-05-22 12:06:51.112
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 12:07:07.227
+!MESSAGE NLS unused message: TargetPlatformResetJob_resetTarget in: org.eclipse.pde.internal.core.pderesources
+
+!ENTRY org.eclipse.osgi 2 1 2013-05-22 12:11:25.539
+!MESSAGE NLS unused message: ContextRunner_2 in: org.eclipse.debug.internal.ui.contextlaunching.ContextMessages
+
+!ENTRY com.android.ide.eclipse.adt 4 4 2013-05-22 12:35:04.827
+!MESSAGE Failed
+!STACK 0
+java.lang.NullPointerException
+	at com.android.tools.lint.client.api.XmlVisitor.visitElement(XmlVisitor.java:204)
+	at com.android.tools.lint.client.api.XmlVisitor.visitFile(XmlVisitor.java:150)
+	at com.android.tools.lint.client.api.LintDriver.checkIndividualResources(LintDriver.java:1617)
+	at com.android.tools.lint.client.api.LintDriver.runFileDetectors(LintDriver.java:888)
+	at com.android.tools.lint.client.api.LintDriver.checkProject(LintDriver.java:785)
+	at com.android.tools.lint.client.api.LintDriver.analyze(LintDriver.java:386)
+	at com.android.ide.eclipse.adt.internal.lint.LintJob.run(LintJob.java:153)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.android.ide.eclipse.adt 4 4 2013-05-22 12:35:34.448
+!MESSAGE Failed
+!STACK 0
+java.lang.NullPointerException
+	at com.android.tools.lint.client.api.XmlVisitor.visitElement(XmlVisitor.java:204)
+	at com.android.tools.lint.client.api.XmlVisitor.visitFile(XmlVisitor.java:150)
+	at com.android.tools.lint.client.api.LintDriver.checkIndividualResources(LintDriver.java:1617)
+	at com.android.tools.lint.client.api.LintDriver.runFileDetectors(LintDriver.java:888)
+	at com.android.tools.lint.client.api.LintDriver.checkProject(LintDriver.java:785)
+	at com.android.tools.lint.client.api.LintDriver.analyze(LintDriver.java:386)
+	at com.android.ide.eclipse.adt.internal.lint.LintJob.run(LintJob.java:153)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.jface 2 0 2013-05-22 12:49:10.993
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-05-22 12:49:10.993
+!MESSAGE A conflict occurred for CTRL+I:
+Binding(CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.indent,Correct Indentation,
+		Corrects the indentation of the selected lines,
+		Category(org.eclipse.jdt.ui.category.source,源,Java 源码操作,true),
+		org.eclipse.ui.internal.MakeHandlersGo@4a7340cf,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.format.active.elements,Format Active Elements,
+		Format active elements,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@55281d4e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-05-22 12:49:10.994
+!MESSAGE A conflict occurred for CTRL+SHIFT+F:
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.format,格式,
+		格式化所选文本,
+		Category(org.eclipse.jdt.ui.category.source,源,Java 源码操作,true),
+		org.eclipse.ui.internal.MakeHandlersGo@54a3fc38,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.format.document,Format,
+		Format selection,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@58f9516,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-05-22 12:49:10.994
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_UP:
+Binding(ALT+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.select.enclosing,选择外层元素,
+		扩展选择以包括外层元素,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@5a03ebf1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.enclosing,Select Enclosing Element,
+		Expand selection to include enclosing element,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@651809bc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-05-22 12:49:10.994
+!MESSAGE A conflict occurred for CTRL+SHIFT+P:
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.goto.matching.bracket,转至匹配的方括号,
+		将光标移至匹配的方括号,
+		Category(org.eclipse.ui.category.navigate,导航,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@37774962,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.goto.matching.bracket,Matching Character,
+		Go to Matching Character,
+		Category(org.eclipse.ui.category.navigate,导航,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@2fc1c575,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-05-22 12:49:10.994
+!MESSAGE A conflict occurred for CTRL+SHIFT+/:
+Binding(CTRL+SHIFT+/,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.add.block.comment,添加块注释,
+		使用块注释包含选择的内容,
+		Category(org.eclipse.jdt.ui.category.source,源,Java 源码操作,true),
+		org.eclipse.ui.internal.MakeHandlersGo@7872dd60,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+/,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.add.block.comment,Add Block Comment,
+		Add Block Comment,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@3eda0bed,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-05-22 12:49:10.994
+!MESSAGE A conflict occurred for CTRL+O:
+Binding(CTRL+O,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.show.outline,快速大纲,
+		显示编辑器输入的快速大纲,
+		Category(org.eclipse.ui.category.navigate,导航,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@3d240767,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+O,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.quick_outline,Quick Outline,
+		Show the quick outline for the editor input,
+		Category(org.eclipse.ui.category.navigate,导航,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@8621a8d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-05-22 12:49:10.994
+!MESSAGE A conflict occurred for CTRL+SHIFT+ARROW_UP:
+Binding(CTRL+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.goto.previous.member,转至上一个成员,
+		将插入标记移至编译单元的上一个成员,
+		Category(org.eclipse.ui.category.navigate,导航,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@60bd2347,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+ARROW_UP,
+	ParameterizedCommand(Command(org.eclipse.wst.xml.ui.previousSibling,Previous Sibling,
+		Go to Previous Sibling,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@3e8aef88,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-05-22 12:49:10.994
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_DOWN:
+Binding(ALT+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.select.last,复原上一个选择,
+		复原上一个选择,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@21573bef,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.last,Restore Last Selection,
+		Restore last selection,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@32710007,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-05-22 12:49:10.994
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.toggle.comment,切换注释,
+		切换所选行的注释,
+		Category(org.eclipse.jdt.ui.category.source,源,Java 源码操作,true),
+		org.eclipse.ui.internal.MakeHandlersGo@661fd902,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.toggle.comment,Toggle Comment,
+		Toggle Comment,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@11ca2f93,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-05-22 12:49:10.994
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_RIGHT:
+Binding(ALT+SHIFT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.select.next,选择下一个元素,
+		扩展选择以包括下一个同代,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@34e046af,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_RIGHT,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.next,Select Next Element,
+		Expand selection to include next sibling,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@47fe4ff8,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-05-22 12:49:10.994
+!MESSAGE A conflict occurred for CTRL+SHIFT+\:
+Binding(CTRL+SHIFT+\,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.remove.block.comment,除去块注释,
+		除去括起选择的内容的块注释,
+		Category(org.eclipse.jdt.ui.category.source,源,Java 源码操作,true),
+		org.eclipse.ui.internal.MakeHandlersGo@7040a647,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+\,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.remove.block.comment,Remove Block Comment,
+		Remove Block Comment,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@7a6f212a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-05-22 12:49:10.994
+!MESSAGE A conflict occurred for CTRL+SHIFT+ARROW_DOWN:
+Binding(CTRL+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.goto.next.member,转至下一个成员,
+		将插入标记移至编译单元的下一个成员,
+		Category(org.eclipse.ui.category.navigate,导航,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@2464b8e4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+SHIFT+ARROW_DOWN,
+	ParameterizedCommand(Command(org.eclipse.wst.xml.ui.nextSibling,Next Sibling,
+		Go to Next Sibling,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@72f58fa3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-05-22 12:49:10.995
+!MESSAGE A conflict occurred for ALT+SHIFT+ARROW_LEFT:
+Binding(ALT+SHIFT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.select.previous,选择上一个元素,
+		扩展选择以包括上一个同代,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@50a69366,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(ALT+SHIFT+ARROW_LEFT,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.structure.select.previous,Select Previous Element,
+		Expand selection to include previous sibling,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		org.eclipse.ui.internal.MakeHandlersGo@68dac064,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)

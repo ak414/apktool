@@ -9,18 +9,18 @@ package per.pqy.apktool;
 
 public final class R {
     public static final class array {
-        public static final int comp_array=0x7f070001;
-        public static final int dec_array=0x7f070000;
-        public static final int decdex_array=0x7f070003;
-        public static final int deodex_array=0x7f070002;
+        public static final int comp_array=0x7f070000;
+        public static final int dec_array=0x7f070001;
+        public static final int decdex_array=0x7f070002;
+        public static final int deodex_array=0x7f070003;
         public static final int longpress_array=0x7f070004;
-        public static final int repackimg=0x7f070006;
-        public static final int unpackimg=0x7f070005;
+        public static final int repackimg=0x7f070005;
+        public static final int unpackimg=0x7f070006;
     }
     public static final class attr {
     }
     public static final class color {
-        public static final int textcolor=0x7f060000;
+        public static final int textcolor=0x7f050000;
     }
     public static final class drawable {
         public static final int file=0x7f020000;
@@ -54,7 +54,54 @@ public final class R {
         public static final int handbook=0x7f040002;
     }
     public static final class string {
-        public static final int app_name=0x7f050000;
+        public static final int about=0x7f080000;
+        public static final int add_finish=0x7f080001;
+        public static final int adding=0x7f080002;
+        public static final int align_finish=0x7f080003;
+        public static final int aligning=0x7f080004;
+        public static final int apk_not_exist=0x7f080005;
+        public static final int app_name=0x7f080006;
+        public static final int cancel=0x7f080007;
+        public static final int compressing=0x7f080008;
+        public static final int copy=0x7f080009;
+        public static final int cost_time=0x7f08000a;
+        public static final int current_path=0x7f08000b;
+        public static final int declaration=0x7f08000c;
+        public static final int decompile_all_finish=0x7f08000d;
+        public static final int decompile_dex_finish=0x7f08000e;
+        public static final int decompile_odex_finish=0x7f08000f;
+        public static final int decompile_res_finish=0x7f080010;
+        public static final int decompiling=0x7f080011;
+        public static final int delete_finish=0x7f080012;
+        public static final int deleting=0x7f080013;
+        public static final int dir_exist=0x7f080014;
+        public static final int dir_not_exist=0x7f080015;
+        public static final int extracting=0x7f080016;
+        public static final int hour=0x7f080017;
+        public static final int import_finish=0x7f080018;
+        public static final int importing_framework=0x7f080019;
+        public static final int jar_not_exist=0x7f08001a;
+        public static final int keep_screen_on=0x7f08001b;
+        public static final int making_odex=0x7f08001c;
+        public static final int minute=0x7f08001d;
+        public static final int never_remind=0x7f08001e;
+        public static final int new_name=0x7f08001f;
+        public static final int no=0x7f08002f;
+        public static final int notify=0x7f080020;
+        public static final int ok=0x7f080021;
+        public static final int op_done=0x7f080022;
+        public static final int put_background=0x7f080023;
+        public static final int recompile_finish=0x7f080024;
+        public static final int recompiling=0x7f080025;
+        public static final int second=0x7f080026;
+        public static final int setting=0x7f080027;
+        public static final int sign_finish=0x7f080028;
+        public static final int signing=0x7f080029;
+        public static final int vibration=0x7f08002a;
+        public static final int want_to_delete=0x7f08002b;
+        public static final int want_to_exit=0x7f08002c;
+        public static final int white_background=0x7f08002d;
+        public static final int yes=0x7f08002e;
     }
     public static final class style {
         /** 
@@ -69,7 +116,7 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080001;
-        public static final int AppTheme=0x7f080000;
+        public static final int AppBaseTheme=0x7f060001;
+        public static final int AppTheme=0x7f060000;
     }
 }

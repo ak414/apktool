@@ -1,0 +1,99 @@
+
+    <resources>
+        <color name="textcolor">#f905f5</color><style name="AppTheme" parent="@style/AppBaseTheme"></style><string-array name="comp_array">
+            <item>recompile</item>
+            <item>browse</item><item>cancel</item>
+            
+            
+        </string-array><string-array name="dec_array">
+            <item>decompile all</item>
+            <item>decompile dex</item>
+            <item>decompile resources</item>
+            <item>sign apk</item>
+            <item>make odex</item>
+            <item>zipalign </item>
+            <item>install</item>
+            <item>delete dex of a apk</item>
+            <item>extract META-INF </item><item>delete META-INF in apk</item>
+            <item>add META-INF to apk</item>
+            
+            <item>import as framework</item><item>cancel</item>
+            
+        </string-array><string-array name="decdex_array">
+            <item>decompile</item>
+            <item>addto apkfile with same name</item><item>addto jarfile with same name</item>
+            <item>cancel</item>
+            
+        </string-array><string-array name="deodex_array">
+            <item>decompile</item>
+            <item>cancel</item>
+        </string-array><string-array name="longpress_array">
+            <item>rename</item>
+            <item>delete</item>
+            <item>get browse permission </item><item>cancel</item>
+            
+        </string-array><string-array name="repackimg">
+            <item>compress(only for mt65xx)</item>
+            <item>compress(common)</item>
+            <item>browse</item>
+            <item>cancel</item>
+        </string-array><string-array name="unpackimg">
+            <item>extract(only for mt65xx)</item>
+            <item>extract(common)</item>
+            <item>cancel</item>
+        </string-array><string name="about">about</string><string name="add_finish">add finish!</string><string name="adding">adding...</string><string name="align_finish">align finish!</string><string name="aligning">aligning...</string><string name="apk_not_exist">apk with same name not found.</string><string name="app_name">Apktool</string>
+        <string name="cancel">cancel</string><string name="compressing">compressimg...</string><string name="copy">copy to clipboard</string><string name="cost_time">cost time:</string><string name="current_path">curent path:</string><string name="declaration">declaration</string><string name="decompile_all_finish">decompile finish!</string><string name="decompile_dex_finish">decompile dex finish!</string><string name="decompile_odex_finish">decompile odex finish!</string><string name="decompile_res_finish">decompile reources finish!</string><string name="decompiling">decompiling...</string><string name="delete_finish">delete finish!</string><string name="deleting">deleting...</string><string name="dir_exist">META-INF dir existsin current path,please delete it first.</string><string name="dir_not_exist">META-INF dir not exists in current path!</string><string name="extracting">extracting...</string><string name="hour">hour(s)</string>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <string name="import_finish">import finish!</string><string name="importing_framework">importing framework...</string><string name="jar_not_exist">jar with same name not found.</string><string name="making_odex">making...</string><string name="minute">minute(s)</string><string name="never_remind">never remind</string><string name="new_name">new name:</string><string name="notify">notify after operate</string><string name="ok">ok</string><string name="op_done">operate finish!</string>
+        <string name="put_background">put into background</string><string name="recompile_finish">recompile finish!</string><string name="recompiling">recompilimg...</string><string name="second">second(s)</string>
+        
+        
+        
+        <string name="setting">Settings</string><string name="sign_finish">sign finish!</string>
+        
+        <string name="signing">singning...</string>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <string name="vibration">vibrate after operate</string><string name="want_to_delete">delete?</string>
+        
+        
+        
+        
+        <string name="want_to_exit">exit?</string>
+        <string name="yes">yes</string>
+        <string name="no">no</string>
+        
+        
+        
+        
+    </resources>

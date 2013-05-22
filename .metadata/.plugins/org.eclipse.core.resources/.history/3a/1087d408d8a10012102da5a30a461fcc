@@ -1,6 +1,0 @@
-    std::cout<<std::endl;    std::cout xmlns:android="http://schemas.android.com/apk/res/android"<<std::endl;<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Apktool</string>
-    <string name="menu_settings">Settings</string>
-    <color name="textcolor">#f905f5</color>
-</resources>

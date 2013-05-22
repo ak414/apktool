@@ -1,0 +1,96 @@
+
+    <resources>
+        <string name="app_name">Apktool</string>
+        <color name="textcolor">#f905f5</color>
+        <string-array name="dec_array">
+            <item >decompile all</item>
+            <item >decompile dex</item>
+            <item >decompile resources</item>
+            <item >sign apk</item>
+            <item >make odex</item>
+            <item >zipalign </item>
+            <item >install</item>
+            <item >delete dex of a apk</item>
+            <item >extract META-INF </item><item >delete META-INF in apk</item>
+            <item >add META-INF to apk</item>
+            
+            <item >import as framework</item><item >cancel</item>
+            
+        </string-array>
+        <string-array name="comp_array">
+            <item >recompile</item>
+            <item >browse</item><item >cancel</item>
+            
+            
+        </string-array>
+        <string-array name="deodex_array">
+            <item >decompile</item>
+            <item >cancel</item>
+        </string-array>
+        <string-array name="decdex_array">
+            <item >decompile</item>
+            <item >addto apkfile with same name</item><item >addto jarfile with same name</item>
+            <item >cancel</item>
+            
+        </string-array>
+        <style name="AppTheme" parent="@style/AppBaseTheme"></style>
+        <string-array name="longpress_array">
+            <item >rename</item>
+            <item >delete</item>
+            <item >get browse permission </item><item >cancel</item>
+            
+        </string-array>
+        <string-array name="unpackimg">
+            <item >extract(only for mt65xx)</item>
+            <item >extract(common)</item>
+            <item >cancel</item>
+        </string-array>
+        <string-array name="repackimg">
+            <item >compress(only for mt65xx)</item>
+            <item >compress(common)</item>
+            <item >browse</item>
+            <item >cancel</item>
+        </string-array>
+        <string name="op_done">operate finish!</string>
+        <string name="cost_time">cost time:</string>
+        <string name="hour">hour(s)</string>
+        <string name="minute">minute(s)</string>
+        <string name="second">second(s)</string>
+        <string name="ok">确定</string>
+        <string name="copy">复制</string>
+        <string name="decompile_all_finish">反编译完成！</string>
+        <string name="sign_finish">签名完成！</string>
+        <string name="recompile_finish">编译完成！</string>
+        <string name="decompile_dex_finish">反编译dex完成！</string>
+        <string name="decompile_res_finish">反编译资源完成！</string>
+        <string name="decompile_odex_finish">反编译odex完成！</string>
+        <string name="install_finish">安装完成！</string>
+        <string name="align_finish">优化完成！</string>
+        <string name="delete_finish">删除完成！</string>
+        <string name="add_finish">添加完成！</string>
+        <string name="put_background">放入后台</string>
+        <string name="decompiling">正在反编译。。。</string>
+        <string name="signing">正在签名。。。</string>
+        <string name="making_odex">正在生成。。。</string>
+        <string name="aligning">正在优化。。。</string>
+        <string name="deleting">正在删除。。。</string>
+        <string name="extracting">正在提取。。。</string>
+        <string name="dir_exist">当前目录已存在META-INF文件夹，请先删除之。</string>
+        <string name="adding">正在添加。。。</string>
+        <string name="dir_not_exist">当前目录不存在META-INF文件夹！</string>
+        <string name="installing_framework">正在安装framework。。。</string>
+        <string name="recompiling">正在编译。。。</string>
+        <string name="apk_not_exist">不存在同名apk文件！</string>
+        <string name="jar_not_exist">不存在同名jar文件！</string>
+        <string name="new_name">新名称</string>
+        <string name="cancel">取消</string>
+        <string name="want_to_delete">删除？</string>
+        <string name="compressing">正在打包。。。</string>
+        <string name="not_remind">不再提醒</string>
+        <string name="declaration">作者声明</string>
+        <string name="current_path">当前路径</string>
+        <string name="want_to_exit">退出？</string>
+        <string name="yes">是</string>
+        <string name="no">否</string>
+        <string name="about">关于软件</string>
+    </resources>

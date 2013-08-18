@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<section name="org.eclipse.equinox.internal.p2.ui.dialogs.InstallWizard.WizardSettings">
 		<item value="731" key="DIALOG_WIDTH"/>
-		<item value="-43" key="DIALOG_Y_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
 		<item value="700" key="DIALOG_HEIGHT"/>
 		<item value="230" key="DIALOG_X_ORIGIN"/>
 		<item value="1|文泉驿微米黑|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
@@ -30,5 +30,12 @@
 		<item value="1" key="AvailableViewType"/>
 		<item value="200" key="AvailableDetailsSashWeight"/>
 		<item value="true" key="ShowLatestVersionsOnly"/>
+	</section>
+	<section name="org.eclipse.equinox.internal.p2.ui.dialogs.UpdateWizard.WizardSettings">
+		<item value="717" key="DIALOG_WIDTH"/>
+		<item value="11" key="DIALOG_Y_ORIGIN"/>
+		<item value="506" key="DIALOG_HEIGHT"/>
+		<item value="291" key="DIALOG_X_ORIGIN"/>
+		<item value="1|文泉驿微米黑|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 </section>

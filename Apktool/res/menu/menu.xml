@@ -1,7 +1,8 @@
 
     <menu xmlns:android="http://schemas.android.com/apk/res/android">
-        <item android:id="@+id/setting" android:title="settings"></item><item android:id="@+id/about" android:title="About"></item>
-        <item android:id="@+id/handbook" android:title="handbook"></item><item android:id="@+id/refresh" android:title="refresh"></item><item android:id="@+id/exit" android:title="exit"></item>
+        <item android:id="@+id/setting" android:title="settings"></item><item android:id="@+id/about" android:title="About"></item><item android:id="@+id/refresh" android:title="refresh"></item><item android:id="@+id/task" android:title="Tasks"></item><item android:id="@+id/donate" android:title="Donate"></item><item android:id="@+id/exit" android:title="exit"></item>
+        
+        
         
         
         

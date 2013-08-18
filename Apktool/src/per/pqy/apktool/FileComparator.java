@@ -6,10 +6,10 @@ import java.util.Comparator;
 public class FileComparator implements Comparator {  
     public final int compare(Object pFirst, Object pSecond) {  
        
-        if(((File) pFirst).isDirectory()&&((File) pSecond).isFile()){
+        if(((File) pFirst).isDirectory()&&!((File) pSecond).isDirectory()){
         	return -1;
         }
-        else if(((File) pFirst).isFile()&&((File) pSecond).isDirectory()){
+        else if(!((File) pFirst).isDirectory()&&((File) pSecond).isDirectory()){
         	return 1;
         }
         String name1 = ((File) pFirst).getName();

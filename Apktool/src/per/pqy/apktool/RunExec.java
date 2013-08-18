@@ -23,7 +23,7 @@ public class RunExec extends Activity {
       
           return out.toString();   
     } 
-	public static void Cmd(String command) {
+	public static void Cmd(String shell,String command) {
 
 		Process process = null;
 
@@ -32,7 +32,7 @@ public class RunExec extends Activity {
 
 		try {
 
-			process = Runtime.getRuntime().exec("su ");
+			process = Runtime.getRuntime().exec(shell);
 
 			processOutput = new DataOutputStream(process.getOutputStream());
 

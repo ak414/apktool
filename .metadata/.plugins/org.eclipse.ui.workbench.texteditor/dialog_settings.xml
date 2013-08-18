@@ -2,28 +2,34 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="302" key="DIALOG_WIDTH"/>
-		<item value="134" key="DIALOG_Y_ORIGIN"/>
-		<item value="955" key="DIALOG_X_ORIGIN"/>
+		<item value="33" key="DIALOG_Y_ORIGIN"/>
 		<item value="403" key="DIALOG_HEIGHT"/>
+		<item value="790" key="DIALOG_X_ORIGIN"/>
 		<item value="1|文泉驿微米黑|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="sh" key="selection"/>
+		<item value="uri" key="selection"/>
 		<list key="findhistory">
-			<item value="/lix/bash"/>
-			<item value="Toast"/>
-			<item value="str"/>
-			<item value="sh "/>
-			<item value="/sdcard"/>
-			<item value="this"/>
-			<item value=""/>
+			<item value="uri_utf"/>
+			<item value="uri_uft"/>
+			<item value="uri1"/>
+			<item value="uri"/>
+			<item value="tool.sh"/>
+			<item value="tools.sh"/>
+			<item value="zipalign"/>
+			<item value="7za"/>
 		</list>
 		<list key="replacehistory">
+			<item value="uri"/>
+			<item value="uri_utf"/>
+			<item value="7z"/>
+			<item value="/data/data/per.pqy.apktool/mydata"/>
+			<item value="/data/data/per.pqy.apktool/lix"/>
 			<item value="sh"/>
 		</list>
 	</section>

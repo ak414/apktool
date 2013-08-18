@@ -37,21 +37,27 @@
         <string-array name="longpress_array">
             <item >重命名</item>
             <item >删除</item>
-            <item >获取目录访问权限</item><item >返回</item>
+            <item >获取访问权限(root)</item><item >设为apktool数据目录</item><item >返回</item>
+            
             
         </string-array>
         <string-array name="unpackimg">
-            <item >解包(mt65xx)</item>
-            <item >解包(通用)</item>
+            <item >解包-mt65xx(root)</item>
+            <item >解包-通用(root)</item>
             <item >返回</item>
         </string-array>
         <string-array name="repackimg">
-            <item >打包(mt65xx)</item>
-            <item >打包(通用)</item>
+            <item >打包-mt65xx(root)</item>
+            <item >打包-通用(root)</item>
             <item >浏览</item>
             <item >返回</item>
         </string-array>
-        <string name="op_done">操作完成！</string>
+        <string-array name="Task">
+            <item>任务一</item>
+            <item>任务二</item>
+            <item>任务三</item>
+            <item>任务四</item>
+        </string-array><string name="op_done">操作完成！</string>
         <string name="cost_time">本次操作共耗时：</string>
         <string name="hour">时</string>
         <string name="minute">分</string>
@@ -68,7 +74,7 @@
         <string name="align_finish">优化完成！</string>
         <string name="delete_finish">删除完成！</string>
         <string name="add_finish">添加完成！</string>
-        <string name="put_background">放入后台</string>
+        
         <string name="decompiling">正在反编译。。。</string>
         <string name="signing">正在签名。。。</string>
         <string name="making_odex">正在生成。。。</string>
@@ -83,12 +89,10 @@
         <string name="apk_not_exist">不存在同名apk文件！</string>
         <string name="jar_not_exist">不存在同名jar文件！</string>
         <string name="new_name">新名称</string>
-        <string name="cancel">取消</string>
-        <string name="want_to_delete">删除？</string>
+        <string name="cancel">取消</string><string name="want_to_delete">删除？</string>
         <string name="compressing">正在打包。。。</string>
-        <string name="never_remind">不再提醒</string>
+        <string name="never_remind">不再提醒</string><string name="put_background">放入后台</string>
         <string name="declaration">作者声明</string>
-        <string name="current_path">当前路径</string>
         <string name="want_to_exit">退出？</string>
         <string name="yes">是</string>
         <string name="no">否</string>
@@ -98,4 +102,12 @@
         <string name="notify">操作完成通知栏提示</string>
         <string name="white_background">白色背景</string>
         <string name="keep_screen_on">屏幕常亮</string>
+        
+        <string name="nofreetask">已达到最大任务数！</string>
+        <string name="cur_task_not_run">当前任务未运行。</string>
+        
+        <string name="agreement">本程序为个人作品，没有任何担保。</string>
+        <string name="directory_no_permission">当前路径无权访问</string>
+        <string name="warning">警告！</string>
+        <string name="data_not_in_sdcard">内存卡根目录未检测到apktool数据目录，您必须先找到apktool数据目录，长按选择“设为apktool数据目录”</string>
     </resources>

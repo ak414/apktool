@@ -6,12 +6,11 @@
 
     <TextView
         android:id="@+id/tvpath"
-        android:layout_gravity="center_horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:textColor="#ff0000"
-        android:textSize="20dip"
-      />
+        android:textSize="15dp" />
 
     <ListView
         android:id="@+id/files"
